@@ -13,7 +13,7 @@ const SkillsTag = ({ children }: { children: string }) => {
   return (
     <span
       className={
-        "inline-flex items-center -mt-0.5 px-2.5 py-0.5 rounded-md text-sm font-medium mr-2 bg-slate-800 text-white"
+        "inline-flex items-center mt-1 px-2.5 py-0.5 rounded-md text-sm font-medium mr-2 bg-slate-800 text-white"
       }
     >
       {children}
@@ -196,16 +196,16 @@ export default function Home() {
         <FAQ />
       </div>
 
-      <footer className="mt-24 p-12 rounded-lg flex flex-col items-center">
+      <footer className="mt-24 p-12 rounded-lg text-center flex flex-col items-center">
         {/* <Image src="/signature.svg" width="180" height="100" alt="Signature" /> */}
-        <h1 className={"font-semibold text-xl opacity-70"}>
+        <h1 className={"font-semibold text-lg md:text-xl opacity-70"}>
           {"That's it, for now, for more to come."}
         </h1>
         <h2 className={"font-medium text-sm opacity-70 text-green-800"}>
           {"Fun fact: I love matcha, a heck ton."}
         </h2>
-        <h2 className={"font-medium opacity-60 mt-6"}>
-          {"Happy new years! Byebye 2023, Hello 2024 🎉"}
+        <h2 className={"font-medium text-sm md:text-base opacity-60 mt-6"}>
+          {"Happy new years! 🎉"}
         </h2>
         <h3 className={"font-medium text-xs opacity-30"}>
           {"Credits to Jordi Enric (@jordienr on github)"}

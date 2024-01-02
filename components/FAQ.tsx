@@ -94,7 +94,7 @@ export function FAQ() {
         </AccordionTrigger>
         <AccordionContent>
           {
-            "Since 2019 i've started developing and coding, but i've been intrigued ever since I was a kid, at about age 9."
+            "Since 2019 i've started developing and coding, but i've been fascinated ever since I was a kid, at about age 9."
           }
         </AccordionContent>
       </AccordionItem>

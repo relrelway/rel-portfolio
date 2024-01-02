@@ -3,7 +3,7 @@
 
 import photos from "../public/photos.json";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
 
@@ -29,13 +29,13 @@ export default function Carousel() {
     }
   };
 
-  function nextImage() {
+  const nextImage = useCallback(() => {
     if (index + 1 < images.length) {
       setIndex(index + 1);
     } else {
       setIndex(0);
     }
-  }
+  }, [images, index]);
   function prevImage() {
     if (index > 0) {
       setIndex(index - 1);
@@ -44,12 +44,18 @@ export default function Carousel() {
     }
   }
 
+  useEffect(() => {
+    setInterval(() => {
+      nextImage();
+    }, 3500);
+  }, [nextImage]);
+
   return (
     <>
       <div className="flex justify-center overflow-hidden max-w-full">
         <AnimatePresence initial={false}>
           <motion.button
-            className="bg-white z-10 flex items-center justify-center text-slate-400 hover:text-slate-800 transition w-fit px-4"
+            className="bg-white z-10 items-center justify-center text-slate-400 hover:text-slate-800 transition w-fit px-4 hidden md:flex"
             onClick={() => prevImage()}
           >
             <ChevronLeftIcon />
@@ -73,6 +79,7 @@ export default function Carousel() {
                   priority={false}
                   className={`
                     w-[${SIZE / 2}px]
+                    h-full
                     object-cover 
                     rounded-lg 
                     transition
@@ -108,7 +115,7 @@ export default function Carousel() {
 
         <AnimatePresence initial={false}>
           <motion.button
-            className="bg-white z-10 flex items-center justify-center text-slate-400 hover:text-slate-800 transition w-fit px-4"
+            className="bg-white z-10 hidden md:flex items-center justify-center text-slate-400 hover:text-slate-800 transition w-fit px-4"
             onClick={() => nextImage()}
           >
             <ChevronRightIcon />
