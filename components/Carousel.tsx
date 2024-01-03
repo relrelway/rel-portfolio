@@ -10,6 +10,7 @@ import Image from "next/image";
 export default function Carousel() {
   const images = photos.map((photo) => "/photos/" + photo);
   let [index, setIndex] = useState(0);
+  let [controlsTouched, setControlsTouched] = useState<boolean>(false);
 
   const SIZE = 500;
 
@@ -36,6 +37,7 @@ export default function Carousel() {
       setIndex(0);
     }
   }, [images, index]);
+
   function prevImage() {
     if (index > 0) {
       setIndex(index - 1);
@@ -45,26 +47,42 @@ export default function Carousel() {
   }
 
   useEffect(() => {
-    setInterval(() => {
-      nextImage();
+    if (controlsTouched) return;
+    const nextImageInterval = setInterval(() => {
+      if (!controlsTouched) nextImage();
+      else clearInterval(nextImageInterval);
     }, 3500);
-  }, [nextImage]);
+
+    return () => {
+      clearInterval(nextImageInterval);
+    };
+  }, [nextImage, controlsTouched]);
 
   return (
     <>
       <div className="flex justify-center overflow-hidden max-w-full">
         <AnimatePresence initial={false}>
           <motion.button
-            className="bg-white z-10 items-center justify-center text-slate-400 hover:text-slate-800 transition w-fit px-4 hidden md:flex"
-            onClick={() => prevImage()}
+            className="bg-white z-10 md:hover:opacity-90 items-center justify-center text-slate-400 hover:text-slate-800 transition w-fit px-4 hidden md:flex"
+            onClick={() => {
+              setControlsTouched(true);
+              prevImage();
+            }}
           >
             <ChevronLeftIcon />
           </motion.button>
         </AnimatePresence>
         <div className="flex gap-4">
           <motion.div
-            style={{ translateX: "50px" }}
-            animate={{ x: `-${index * (SIZE / 2)}px` }}
+            animate={{
+              x: `-${index * (SIZE / 2)}px`,
+              translateX:
+                index + 1 === images.length
+                  ? "50px"
+                  : index === 0
+                  ? "10px"
+                  : "50px",
+            }}
             transition={{ duration: 1.2, ease: [0.32, 0.32, 0, 1] }}
             className={`flex relative w-[${SIZE}px] h-[${SIZE}px]`}
           >
@@ -115,8 +133,11 @@ export default function Carousel() {
 
         <AnimatePresence initial={false}>
           <motion.button
-            className="bg-white z-10 hidden md:flex items-center justify-center text-slate-400 hover:text-slate-800 transition w-fit px-4"
-            onClick={() => nextImage()}
+            className="bg-white hover:opacity-60 opacity-70 md:opacity-100 md:hover:opacity-90 z-10 flex items-center justify-center text-slate-400 hover:text-slate-800 transition w-fit px-2 md:px-4"
+            onClick={() => {
+              setControlsTouched(true);
+              nextImage();
+            }}
           >
             <ChevronRightIcon />
           </motion.button>

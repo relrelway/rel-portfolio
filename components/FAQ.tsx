@@ -44,7 +44,7 @@ export function FAQ() {
               The code is open and you can{" "}
               <Link
                 className="text-blue-500 underline"
-                href="https://github.com/jordienr/jordienric.com"
+                href="https://github.com/relrelway/rel-portfolio"
                 target="_blank"
               >
                 find it here.
@@ -59,7 +59,9 @@ export function FAQ() {
           What resources did you use to learn web development?
         </AccordionTrigger>
         <AccordionContent>
-          <p>Here they are sorted by impact on my learning:</p>
+          <p className={"font-semibold"}>
+            Here they are sorted by impact on my learning:
+          </p>
           <ul className="flex mt-4 flex-col gap-1.5">
             <li>
               <PriceTag pricetag="free" />

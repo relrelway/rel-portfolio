@@ -23,7 +23,7 @@ const SkillsTag = ({ children }: { children: string }) => {
 
 export default function Home() {
   const about =
-    "Hey there! I'm a fullstack developer and designer focused on trying to build snappy user interfaces and performant, scalable, and future-proof applications.";
+    "Hallo - I'm a fullstack dev and designer focused on trying to build snappy user interfaces and performant, scalable, and future-proof applications. I also enjoy taking photographs of pretty things and sunsets.";
 
   const links = [
     {
@@ -71,11 +71,11 @@ export default function Home() {
           <div className="mt-4 flex divide-x gap-2">
             {links.map((link, index) => (
               <motion.a
-                initial={{ opacity: 0, scale: 0.5, y: 20 }}
+                initial={{ opacity: 0, scale: 0.3, y: 25 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
+                  duration: 0.7,
+                  delay: index * 0.15,
                   type: "spring",
                 }}
                 className="h-10 w-10 text-slate-600 bg-white shadow-sm hover:text-indigo-600 text-xl rounded-xl flex items-center justify-center border border-slate-200"
@@ -110,9 +110,8 @@ export default function Home() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{
-                        duration: 0.05,
+                        duration: 0.1,
                         delay: index * 0.025,
-                        type: "spring",
                       }}
                     >
                       {char}
@@ -123,14 +122,14 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{
-                    duration: 0.15,
-                    delay: 3,
+                    duration: 0.2,
+                    delay: 6.5,
                     type: "ease",
                     repeat: Infinity,
                     repeatDelay: 0.5,
                     repeatType: "reverse",
                   }}
-                  className="h-5 w-1 -mb-0.5 bg-orange-500 inline-block"
+                  className="h-4 w-1 -mb-0.5 bg-orange-500 inline-block"
                 ></motion.span>
               </p>
             </div>
@@ -145,7 +144,7 @@ export default function Home() {
         <div className="col-span-12">
           <div className="flex flex-col">
             <h1 className={"font-medium text-sm opacity-50"}>
-              {"Technologies I work with"}
+              {"Main Technologies I work with"}
             </h1>
             <div className="bg-white max-w-xl w-full rounded-xl shadow-sm border p-2 mt-2">
               <LogosWidget />
@@ -159,9 +158,16 @@ export default function Home() {
             <div className="max-w-xl w-full rounded-xl mt-1">
               <SkillsTag>Javascript</SkillsTag>
               <SkillsTag>Typescript</SkillsTag>
+              <SkillsTag>Tailwind</SkillsTag>
+              <SkillsTag>Framer Motion</SkillsTag>
               <SkillsTag>React Web/Native</SkillsTag>
               <SkillsTag>Next.js</SkillsTag>
               <SkillsTag>Node.js</SkillsTag>
+              <SkillsTag>Supabase</SkillsTag>
+              <SkillsTag>Postgres</SkillsTag>
+              <SkillsTag>Vercel</SkillsTag>
+              <SkillsTag>Prisma ORM</SkillsTag>
+              <SkillsTag>drinking matcha :)</SkillsTag>
             </div>
           </div>
         </div>
@@ -198,7 +204,7 @@ export default function Home() {
 
       <footer className="mt-24 p-12 rounded-lg text-center flex flex-col items-center">
         {/* <Image src="/signature.svg" width="180" height="100" alt="Signature" /> */}
-        <h1 className={"font-semibold text-lg md:text-xl opacity-70"}>
+        <h1 className={"font-semibold text-lg md:text-xl opacity-70 leading-6"}>
           {"That's it, for now, for more to come."}
         </h1>
         <h2 className={"font-medium text-sm opacity-70 text-green-800"}>
@@ -207,9 +213,9 @@ export default function Home() {
         <h2 className={"font-medium text-sm md:text-base opacity-60 mt-6"}>
           {"Happy new years! 🎉"}
         </h2>
-        <h3 className={"font-medium text-xs opacity-30"}>
+        {/* <h3 className={"font-medium text-xs opacity-30"}>
           {"Credits to Jordi Enric (@jordienr on github)"}
-        </h3>
+        </h3> */}
       </footer>
     </div>
   );
