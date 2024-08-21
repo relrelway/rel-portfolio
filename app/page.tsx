@@ -23,7 +23,7 @@ const SkillsTag = ({ children }: { children: string }) => {
 
 export default function Home() {
   const about =
-    "Hallo - I'm a fullstack dev and designer focused on trying to build snappy user interfaces and performant, scalable, and future-proof applications. I also enjoy taking photographs of pretty things and sunsets.";
+    "I focus on contributing a positive change in Indonesia’s underprivileged communities through technology. With a passion and foundation in Computer Science & Software Engineering, I am committed to leveraging modern technology for social impact.";
 
   const links = [
     {
@@ -53,19 +53,19 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen p-4 bg-gradient-to-b from-pink-50 via-slate-50">
+    <div className="min-h-screen p-4 bg-gradient-to-b from-blue-50 via-slate-50">
       <div className="max-w-xl mx-auto">
         <header className="pt-12 max-w-xl mx-auto">
-          <span className="text-indigo-500">‧₊˚✩ ₊˚⊹♡</span>
+          <span className="text-indigo-700">‧₊˚✩ ₊˚⊹♡</span>
           <h1 className="font-semibold text-2xl">Farrell D.</h1>
           <h4 className="text-slate-400 text-lg">
             Frontend @{" "}
             <Link
-              href="https://instagram.com/lumabonapp"
+              href="https://instagram.com/comufolks"
               target="_blank"
               className="underline cursor-alias text-indigo-500 font-semibold"
             >
-              Lumabon
+              Comufolks
             </Link>
           </h4>
           <div className="mt-4 flex divide-x gap-2">
@@ -167,7 +167,7 @@ export default function Home() {
               <SkillsTag>Postgres</SkillsTag>
               <SkillsTag>Vercel</SkillsTag>
               <SkillsTag>Prisma ORM</SkillsTag>
-              <SkillsTag>drinking matcha :)</SkillsTag>
+              <SkillsTag>matcha :)</SkillsTag>
             </div>
           </div>
         </div>
@@ -205,13 +205,13 @@ export default function Home() {
       <footer className="mt-24 p-12 rounded-lg text-center flex flex-col items-center">
         {/* <Image src="/signature.svg" width="180" height="100" alt="Signature" /> */}
         <h1 className={"font-semibold text-lg md:text-xl opacity-70 leading-6"}>
-          {"That's it, for now, for more to come."}
+          {"That's it! for now, for more to come."}
         </h1>
         <h2 className={"font-medium text-sm opacity-70 text-green-800"}>
-          {"Fun fact: I love matcha, a heck ton."}
+          {"Fun fact: matcha."}
         </h2>
         <h2 className={"font-medium text-sm md:text-base opacity-60 mt-6"}>
-          {"Happy new years! 🎉"}
+          {"🎉"}
         </h2>
         {/* <h3 className={"font-medium text-xs opacity-30"}>
           {"Credits to Jordi Enric (@jordienr on github)"}

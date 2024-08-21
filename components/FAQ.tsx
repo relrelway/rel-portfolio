@@ -31,8 +31,8 @@ export function FAQ() {
         <AccordionContent>
           <ul>
             <li className={"font-medium text-sm opacity-50"}>
-              Most of this portfolio was designed by Jordi Enric (@jordienr), a
-              frontend dev @ supabase
+              Majority of this portfolio was designed by Jordi Enric
+              (@jordienr), a frontend dev @ supabase
             </li>
             <li className={"mt-4 opacity-70"}>
               Built with Nextjs 13 app router, TailwindCSS, TypeScript and
