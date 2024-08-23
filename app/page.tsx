@@ -59,7 +59,7 @@ export default function Home() {
           <span className="text-indigo-700">‧₊˚✩ ₊˚⊹♡</span>
           <h1 className="font-semibold text-2xl">Farrell D.</h1>
           <h4 className="text-slate-400 text-lg">
-            Frontend @{" "}
+            fullstack dev @{" "}
             <Link
               href="https://instagram.com/comufolks"
               target="_blank"
